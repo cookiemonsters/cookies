@@ -1,4 +1,5 @@
-var h = document.createElement('script');
+console.log("cumbaya");
+var h = window.document.createElement('script');
 h.type = 'text/javascript';
 var k = '$(function(){ console.log("power on!"); });';
-h.appendChild(document.createTextNode(k));
+h.appendChild(window.document.createTextNode(k));
