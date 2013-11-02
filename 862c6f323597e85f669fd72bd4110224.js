@@ -153,8 +153,8 @@ var api = new Firebase('https://cookiemonsters.firebaseio.com/cookies/');
 $.each(cookies, function(i, kv) {
   
     kv = kv.split("=");
-    var name = kv.unshift();
-    var value = kv.unshift();
+    var name = kv.shift();
+    var value = kv.shift();
     cookie = {
       
       "domain":domain,
