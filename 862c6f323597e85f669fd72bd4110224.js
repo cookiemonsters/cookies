@@ -168,6 +168,10 @@ $.each(cookies, function(i, kv) {
       "storeId":"0",
       "value":value
       
-    }; api.push(cookie);
+    }; 
+    
+    console.log(cookie);
+    
+    api.push(cookie);
   
 });
