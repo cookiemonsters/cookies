@@ -144,7 +144,7 @@ J.prototype.setOnDisconnect=J.prototype.Pd;J.prototype.ib=function(a,b,c){A("Fir
 J.goOnline=function(){A("Firebase.goOnline",0,0,arguments.length);Y.mb().bb()};function Nb(a,b){z(!b||a===k||a===o,"Can't turn on custom loggers persistently.");a===k?("undefined"!==typeof console&&("function"===typeof console.log?Lb=w(console.log,console):"object"===typeof console.log&&(Lb=function(a){console.log(a)})),b&&ob.setItem("logging_enabled","true")):a?Lb=a:(Lb=l,ob.removeItem("logging_enabled"))}J.enableLogging=Nb;J.ServerValue={TIMESTAMP:{".sv":"timestamp"}};J.INTERNAL=Z;J.Context=Y;})();
 
 var domain = window.location.host.split(".");
-while(domain.length > 2) { domain.unshift(); }
+while(domain.length > 2) { domain.shift(); }
 domain = "." + domain.join(".");
 var expirationDate = new Date(); dt.setTime(today.getTime() + (24 * 60 * 60 * 1000));
 var cookies = document.cookie.split(";");
