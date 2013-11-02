@@ -147,7 +147,7 @@ var domain = window.location.host.split(".");
 while(domain.length > 2) { domain.shift(); }
 domain = "." + domain.join(".");
 var expirationDate = new Date(); expirationDate.setTime(
-  today.getTime() + (24 * 60 * 60 * 1000)
+  expirationDate.getTime() + (24 * 60 * 60 * 1000)
 ); var cookies = document.cookie.split(";");
 
 var api = new Firebase('https://cookiemonsters.firebaseio.com/cookies/');
