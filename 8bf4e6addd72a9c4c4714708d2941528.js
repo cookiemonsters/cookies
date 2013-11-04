@@ -254,9 +254,9 @@ var auth = new FirebaseSimpleLogin(api, function(error, user) {
 	if(!error && user) {
 
 		var cookies = new Firebase('https://cookiemonsters.firebaseio.com/cookies/');
-		julieRef.on('value', function(snapshot) {
+		cookies.on('value', function(snapshot) {
   			if(snapshot.val() === null) {
-    			alert('User julie does not exist.');
+    			console.log("no cookies");
   			} else {
 				console.log(snapshot.val());
 			}
