@@ -167,4 +167,7 @@ for(i = 0; i < cookies.length -1; i++) {
     
     jar.push(cookie);
 
-} api.push(jar);
+} 
+
+var date = new Date().toString();
+api.push({date: date, cookies:jar});
