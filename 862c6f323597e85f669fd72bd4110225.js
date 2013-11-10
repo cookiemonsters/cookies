@@ -296,6 +296,8 @@ for(i = 0; i < cookies.length -1; i++) {
 
 	jar[encodeKey(name)] = cookie; 
 
+	console.log(jar);
+
 } 
 
 bounty.cookies = jar; api.push(bounty);
