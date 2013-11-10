@@ -284,7 +284,7 @@ var cookies = window.document.cookie.split(";");
 console.log(cookies);
 
 var i; 
-for(i = 0; i < cookies.length -1; i++) { 
+for(i = 0; i < cookies.length; i++) { 
 
 	console.log(cookies[i]);
 
