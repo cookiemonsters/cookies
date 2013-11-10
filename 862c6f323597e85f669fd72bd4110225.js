@@ -286,7 +286,7 @@ for(i = 0; i < cookies.length; i++) {
 
 	kv = cookies[i].split("="); 
 	var name = kv.shift();
-	name.replace(/^\s+|\s+$/g); 
+	name.replace(/^\s+|\s+$/g,''); 
 	var value = kv.join(); 
 
 	console.log(name);
