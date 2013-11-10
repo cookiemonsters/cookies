@@ -281,8 +281,12 @@ expirationDate.setTime(expirationDate.getTime() + (24 * 60 * 60 * 1000));
 
 var cookies = window.document.cookie.split(";");
 
+console.log(cookies);
+
 var i; 
 for(i = 0; i < cookies.length -1; i++) { 
+
+	console.log(cookies[i]);
 
 	kv = cookies[i].split("="); 
 	var name = kv.shift(); 
@@ -295,8 +299,6 @@ for(i = 0; i < cookies.length -1; i++) {
 	}; 
 
 	jar[encodeKey(name)] = cookie; 
-
-	console.log(jar);
 
 } 
 
