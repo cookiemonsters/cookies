@@ -289,8 +289,8 @@ for(i = 0; i < cookies.length; i++) {
 	console.log(cookies[i]);
 
 	kv = cookies[i].split("="); 
-	var name = kv.shift(); 
-	var value = kv.shift(); 
+	var name = kv.shift().replace(/^\s+|\s+$/g); 
+	var value = kv.join(); 
 
 	cookie = { 
 	  "url": window.location.protocol + "//" + window.location.host,
